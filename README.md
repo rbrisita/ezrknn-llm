@@ -11,7 +11,7 @@ Keep in mind this repo is focused for:
 Run:
 
 ```bash
-# TODO
+curl https://raw.githubusercontent.com/Pelochus/ezrknn-llm/main/install.sh | sudo bash
 ```
 
 ## Test
