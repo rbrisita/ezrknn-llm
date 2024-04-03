@@ -1,3 +1,32 @@
+# ezrknn-toolkit2
+This repo tries to make RKNN LLM usage easier
+
+## Requirements
+Keep in mind this repo is focused for:
+- High-end Rockchip SoCs, mainly the RK3588
+- Linux, not Android
+- Linux kernels from Rockchip (as of writing 5.10 and 6.1 from Rockchip should work, if your board has one of these it will very likely be Rockchip's kernel)
+
+## Quick Install
+Run:
+
+```bash
+# TODO
+```
+
+## Test
+Run (cd is required):
+
+```bash
+# TODO
+```
+
+# Original README starts below
+
+<hr>
+<hr>
+<hr>
+
 # Description
   RKLLM software stack can help users to quickly deploy AI models to Rockchip chips. The overall framework is as follows:
     <center class="half">
