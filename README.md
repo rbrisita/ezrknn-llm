@@ -1,5 +1,5 @@
-# ezrknn-toolkit2
-This repo tries to make RKNN LLM usage easier
+# ezrknn-llm
+This repo tries to make RKNN LLM usage easier for people who don't want to read through Rockchip's docs
 
 ## Requirements
 Keep in mind this repo is focused for:
