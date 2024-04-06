@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Dependencies
+apt update
 apt install -y python3 pip git curl wget nano sudo # python3-tk
 
 # Better than using the default from Rockchip

@@ -1,2 +1,3 @@
 FROM ubuntu:focal
-ENTRYPOINT /bin/bash ./entrypoint.sh
+COPY setup.sh /setup.sh
+RUN ./setup.sh
