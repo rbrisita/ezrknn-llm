@@ -21,6 +21,26 @@ Run (cd is required):
 # TODO
 ```
 
+## Converting LLMs for Rockchip's NPUs
+### Docker
+In order to do this, you need a Linux PC x86 (Intel or AMD). Currently, Rockchip does not provide ARM support for converting models, so can't be done on a Orange Pi or similar.
+Run:
+
+`docker run -it pelochus/ezrkllm-toolkit:1.0 bash`
+
+Then, inside the Docker container:
+
+```bash
+apt install -y python3-tk # This needs some configuring from your part 
+cd ezrknn-llm/rkllm-toolkit/examples/huggingface/
+```
+
+Now change the `test.py` with your preferred model. This container provides Qwen-1.8B and LLaMa2 Uncensored. By default, Qwen-1.8B is selected. To convert the model, run:
+
+`python3 test.py`
+
+I currently cannot convert the models, so I don't know what the output will be. I believe this is Rockchip's fault. Let me know if you could or what error gives you.
+
 # Original README starts below
 
 <hr>
