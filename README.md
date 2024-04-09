@@ -26,7 +26,7 @@ Run (cd is required):
 In order to do this, you need a Linux PC x86 (Intel or AMD). Currently, Rockchip does not provide ARM support for converting models, so can't be done on a Orange Pi or similar.
 Run:
 
-`docker run -it pelochus/ezrkllm-toolkit:1.1 bash`
+`docker run -it pelochus/ezrkllm-toolkit:latest bash`
 
 Then, inside the Docker container:
 
