@@ -11,10 +11,16 @@ Keep in mind this repo is focused for:
 - Linux kernels from Rockchip (as of writing 5.10 and 6.1 from Rockchip should work, if your board has one of these it will very likely be Rockchip's kernel)
 
 ## Quick Install
-Run:
+First clone the repo:
 
 ```bash
-curl https://raw.githubusercontent.com/Pelochus/ezrknn-llm/main/install.sh | sudo bash
+git clone https://github.com/Pelochus/ezrknn-llm
+```
+
+Then run:
+
+```bash
+cd ezrknn-llm && bash install.sh
 ```
 
 ## Test
