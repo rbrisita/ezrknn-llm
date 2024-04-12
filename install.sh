@@ -18,9 +18,9 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
-message_print "Cloning repository..."
+message_print "Changing to repository..."
 
-git clone https://github.com/Pelochus/ezrknn-llm.git
+# git clone https://github.com/Pelochus/ezrknn-llm.git
 cd ezrknn-llm/
 
 message_print "Installing RKNN LLM libraries..."
@@ -33,7 +33,7 @@ message_print "Compiling LLM runtime for Linux..."
 cd ./rkllm-runtime/example
 bash build-linux.sh
 
-message_pint "Moving rkllm to /usr/bin"
+message_pint "Moving rkllm to /usr/bin..."
 
 cp ./build/build_aarch64_release/llm_demo /usr/bin/rkllm # We also change the name for remembering how to call it from shell 
 
