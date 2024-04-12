@@ -3,37 +3,38 @@
 # Made by Pelochus
 # Check for more info: https://github.com/Pelochus/ezrknn-llm/
 
-echo
-echo "#########################################"
-echo "Checking root permission..."
-echo "#########################################"
-echo
+message_print() {
+  echo
+  echo "#########################################"
+  echo $1
+  echo "#########################################"
+  echo
+}
+
+message_print "Checking root permission..."
 
 if [ "$EUID" -ne 0 ]; then 
   echo "Please run this script as root!"
   exit
 fi
 
-echo
-echo "#########################################"
-echo "Cloning repository..."
-echo "#########################################"
-echo
+message_print "Cloning repository..."
 
 git clone https://github.com/Pelochus/ezrknn-llm.git
 cd ezrknn-llm/
 
-echo
-echo "#########################################"
-echo "Installing RKNN LLM..."
-echo "#########################################"
-echo
+message_print "Installing RKNN LLM libraries..."
 
 cp ./rkllm-runtime/runtime/Linux/librkllm_api/aarch64/* /usr/lib
 cp ./rkllm-runtime/runtime/Linux/librkllm_api/include/* /usr/local/include
 
-echo
-echo "#########################################"
-echo "Done!"
-echo "#########################################"
-echo
+message_print "Compiling LLM runtime for Linux..."
+
+cd ./rkllm-runtime/example
+bash build-linux.sh
+
+message_pint "Moving rkllm to /usr/bin"
+
+cp ./build/build_aarch64_release/llm_demo /usr/bin/rkllm # We also change the name for remembering how to call it from shell 
+
+message_print "Done!"
