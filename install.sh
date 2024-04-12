@@ -18,10 +18,10 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
-message_print "Changing to repository..."
+# message_print "Changing to repository..."
 
 # git clone https://github.com/Pelochus/ezrknn-llm.git
-cd ezrknn-llm/
+# cd ezrknn-llm/
 
 message_print "Installing RKNN LLM libraries..."
 
