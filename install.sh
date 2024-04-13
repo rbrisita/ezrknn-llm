@@ -33,8 +33,12 @@ message_print "Compiling LLM runtime for Linux..."
 cd ./rkllm-runtime/example
 bash build-linux.sh
 
-message_pint "Moving rkllm to /usr/bin..."
+message_print "Moving rkllm to /usr/bin..."
 
-cp ./build/build_aarch64_Release/llm_demo /usr/bin/rkllm # We also change the name for remembering how to call it from shell 
+cp ./build/build_aarch64_Release/llm_demo /usr/bin/rkllm # We also change the name for remembering how to call it from shell
+
+message_print "Increasing file limit for all users (needed for LLMs to run)..."
+
+echo "* soft nofile 16192" >> /etc/security/limit.conf
 
 message_print "Done installing ezrknn-llm!"
