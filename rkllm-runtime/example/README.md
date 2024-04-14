@@ -9,7 +9,7 @@ bash build-linux.sh
 Push the compiled `llm_demo` file and `librkllmrt.so` file to the device:
 ```bash
 cp build/build_linux_aarch64_Release/llm_demo /usr/bin
-cp ../runtime/Linux/librkllm_api/aarch64/librkllmrt.so /usr/local/lib
+cp ../runtime/Linux/librkllm_api/aarch64/librkllmrt.so /usr/local/include
 ```
 
 ## Run
