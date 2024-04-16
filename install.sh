@@ -39,7 +39,7 @@ cp ./build/build_aarch64_Release/llm_demo /usr/bin/rkllm # We also change the na
 
 message_print "Increasing file limit for all users (needed for LLMs to run)..."
 
-echo "* soft nofile 8192" >> /etc/security/limits.conf
+echo "* soft nofile 16384" >> /etc/security/limits.conf
 echo "* hard nofile 1048576" >> /etc/security/limits.conf
 
 message_print "Done installing ezrknn-llm!"
