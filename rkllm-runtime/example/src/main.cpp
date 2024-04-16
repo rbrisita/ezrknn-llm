@@ -27,18 +27,17 @@
 #define PROMPT_TEXT_POSTFIX "<|im_end|><|im_start|>assistant"
 
 using namespace std;
+
 LLMHandle llmHandle = nullptr;
 
 void exit_handler(int signal)
 {
     if (llmHandle != nullptr)
     {
-        {
-            cout << "Catched exit signal. Exiting..." << endl;
-            LLMHandle _tmp = llmHandle;
-            llmHandle = nullptr;
-            rkllm_destroy(_tmp);
-        }
+        cout << "Catched exit signal. Exiting..." << endl;
+        LLMHandle _tmp = llmHandle;
+        llmHandle = nullptr;
+        rkllm_destroy(_tmp);
         exit(signal);
     }
 }
@@ -83,21 +82,21 @@ int main(int argc, char **argv)
     printf("RKLLM init success!\n");
     
     vector<string> pre_input;
-    pre_input.push_back("Welcome to ezrkllm! This is an adaptation of Rockchip's rknn-llm repo (see github.com/airockchip/rknn-llm) for running LLMs on its SoCs' NPUs. \n");
+    pre_input.push_back("Welcome to ezrkllm! This is an adaptation of Rockchip's rknn-llm repo (see github.com/airockchip/rknn-llm) for running LLMs on its SoCs' NPUs.\n");
     pre_input.push_back("You are currently running the runtime for ");
     pre_input.push_back(param.target_platform);
     pre_input.push_back("\nTo exit the model, enter either exit or quit\n");
     pre_input.push_back("\nMore information here: https://github.com/Pelochus/ezrknpu");
     pre_input.push_back("\nDetailed information for devs here: https://github.com/Pelochus/ezrknn-llm");
     
-    cout << "\n************************ Pelochus' ezrkllm runtime **********************\n" << endl;
+    cout << "\n*************************** Pelochus' ezrkllm runtime *************************\n" << endl;
     
     for (int i = 0; i < (int)pre_input.size(); i++)
     {
-        cout << "[" << i << "] " << pre_input[i] << endl;
+        cout << pre_input[i];
     }
     
-    cout << "\n*************************************************************************\n" << endl;
+    cout << "\n*******************************************************************************\n" << endl;
 
     string text;
     while (true)
@@ -123,7 +122,7 @@ int main(int argc, char **argv)
         }
         
         string text = PROMPT_TEXT_PREFIX + input_str + PROMPT_TEXT_POSTFIX;
-        printf("LLM Model: ");
+        printf("LLM: ");
         rkllm_run(llmHandle, text.c_str(), NULL);
     }
 
