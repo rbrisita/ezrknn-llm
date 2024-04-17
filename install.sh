@@ -35,7 +35,7 @@ bash build-linux.sh
 
 message_print "Moving rkllm to /usr/bin..."
 
-cp ./build/build_aarch64_Release/llm_demo /usr/bin/rkllm # We also change the name for remembering how to call it from shell
+cp ./build/build_linux_aarch64_Release/llm_demo /usr/bin/rkllm # We also change the name for remembering how to call it from shell
 
 message_print "Increasing file limit for all users (needed for LLMs to run)..."
 
