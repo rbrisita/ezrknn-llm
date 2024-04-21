@@ -68,7 +68,7 @@ int main(int argc, char **argv)
     
     signal(SIGINT, exit_handler);
     string rkllm_model(argv[1]);
-    printf("rkllm init start\n");
+    printf("RKLLM starting, please wait...\n");
 
     RKLLMParam param = rkllm_createDefaultParam();
     param.modelPath = rkllm_model.c_str();
