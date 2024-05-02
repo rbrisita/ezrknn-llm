@@ -2,7 +2,7 @@
 This repo tries to make RKNN LLM usage easier for people who don't want to read through Rockchip's docs.
 
 Main repo is https://github.com/Pelochus/ezrknpu where you can find more instructions, documentation... for general use.
-This repo is intended for details in RKLLM and how also how to convert models.
+This repo is intended for details in RKLLM and also how to convert models.
 
 ## Requirements
 Keep in mind this repo is focused for:
@@ -24,7 +24,7 @@ cd ezrknn-llm && bash install.sh
 ```
 
 ## Test
-Run (assuming your on the folder where your `.rkllm` file is located):
+Run (assuming you are on the folder where your `.rkllm` file is located):
 
 ```bash
 rkllm qwen-chat-1_8B.rkllm # Or any other model you like
