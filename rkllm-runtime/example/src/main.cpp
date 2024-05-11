@@ -238,7 +238,9 @@ int main(int argc, char **argv) {
         return -1;
     }
 
-    std::cout << "RKLLM starting, please wait..." << endl;
+    if (!quiet) {
+        std::cout << "RKLLM starting, please wait..." << endl;
+    }
 
     signal(SIGINT, exit_handler);
 
@@ -281,10 +283,12 @@ int main(int argc, char **argv) {
         return result;
     }
 
-    std::cout << "RKLLM init success!\n"
-    << "Enter either 'exit' or 'quit' to terminate."
-    << endl;
-    sleep(0.1);
+    if (!quiet) {
+        std::cout << "RKLLM init success!\n"
+        << "Enter either 'exit' or 'quit' to terminate."
+        << endl;
+        sleep(0.1);
+    }
 
     systemPrompt = SYSTEM_PROMPT(systemPrompt);
     std::string text;
